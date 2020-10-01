@@ -1,4 +1,4 @@
-
+//このファイルで修正を行います。
 
 public class MonsterZoo {
 	double distance=0.0;//歩いた距離
