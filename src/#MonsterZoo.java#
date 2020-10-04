@@ -46,20 +46,14 @@ public class MonsterZoo {
     //卵は最大9個まで持てる．卵を取得するとeggにtrueが代入され，
     //移動するたびに,eggDistanceに1.0kmずつ加算される．
     //3km移動するとランダムでモンスターが孵る
-
-    //double eggDistance[] = new double[9];
-    //boolean egg[] = new boolean[9];
     ArrayList<Double> eggDistance = new ArrayList<>();
     ArrayList<Boolean> egg = new ArrayList<>();
     
     //ユーザがGetしたモンスター一覧
-    //String userMonster[] = new String[100];
     ArrayList<String> userMonster = new ArrayList<>();
     
     //モンスター図鑑．モンスターの名前とレア度(0.0~9.0)がそれぞれの配列に保存されている
     //レア度が高いほうが捕まえにくい
-    //String monsterZukan[] = new String[22];
-    //double monsterRare[] = new double[22];
     ArrayList<String> monsterZukan = new ArrayList<>();
     ArrayList<Double> monsterRare = new ArrayList<>();
 
@@ -202,7 +196,7 @@ public class MonsterZoo {
     public void setMonsterRare(ArrayList<Double> monsterRare) {
 	this.monsterRare = monsterRare;
     }
-
+    
     public void setEggDistance(ArrayList<Double> eggDistance) {
 	this.eggDistance = eggDistance;
     }
