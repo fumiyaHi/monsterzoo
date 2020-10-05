@@ -9,9 +9,9 @@ line: 17, method is too long (over 10 lines).
 line: 49, method is too long (over 10 lines).
 
 修正後の9ルール適応時の状態(--rough)
-line: 69, setter method found.
-line: 38, indentation level is too much (more than 2 indent level).
-line: 69, method is too long (over 10 lines).
+line: 68, setter method found.
+line: 40, indentation level is too much (more than 2 indent level).
+line: 68, method is too long (over 10 lines).
 */
 
 import java.util.stream.IntStream;
@@ -22,21 +22,19 @@ public class Main {
 
     public static void main(String[] args) {
 	setMonsterZukan();
-	setEggs();
-	setuserMonster();
 	//1000ミリ秒（1秒）ずつ止まりながらpz.move()を呼び出し続ける
 	//手持ちのボールが無くなったら終了
 	move_main();
 	final_result();
     }
-
+    //
     public static void final_result(){
 	System.out.println("ボールがなくなった！");
-	IntStream.range(0,pz.getUserMonster().size())
-	    .filter(value -> pz.getUserMonster().get(value)!="")
-	    .forEach(value -> System.out.println(pz.getUserMonster().get(value)+"を捕まえた．"));
+	Integer usermonstersize = pz.userMonster.userMonster.size();
+	IntStream.range(0,usermonstersize)
+	    .filter(value -> pz.userMonster.userMonster.get(value)!="")
+	    .forEach(value -> System.out.println(pz.userMonster.userMonster.get(value)+"を捕まえた．")); 
     }
-
     //モンスターがgetできるかをチャレンジするメソッド
     public static void move_main(){
 	while(true){
@@ -57,30 +55,13 @@ public class Main {
 	return true;
     }
     public static boolean move_challeng(){
-	if(pz.getBalls()>0){
+	if(pz.player.balls > 0){
 	    pz.move();
-	    System.out.println("手持ちのボールは"+pz.getBalls()+"個，フルーツは"+pz.getFruits()+"個");
-	    System.out.println(pz.getDistance()+"km歩いた．");
+	    System.out.println("手持ちのボールは"+pz.player.balls+"個，フルーツは"+pz.player.fruits+"個");
+	    System.out.println(pz.player.distance+"km歩いた．");
 	    return true;
 	}
 	return false;
-    }
-    //
-    public static void setuserMonster(){
-	ArrayList<String> usermonster = new ArrayList<>();
-	IntStream.range(0,100)
-	    .forEach(value -> usermonster.add(""));
-	pz.setuserMonster(usermonster);
-    }
-    public static void setEggs(){
-	ArrayList<Double> eggDistance = new ArrayList<>();
-	ArrayList<Boolean> egg = new ArrayList<>();
-	IntStream.range(0,10)
-	    .forEach(value -> eggDistance.add(0.0));
-	IntStream.range(0,10)
-	    .forEach(value -> egg.add(false));
-	pz.setEggDistance(eggDistance);
-	pz.setEgg(egg);
     }
     //テスト用のモンスターデータを登録するメソッド
     public static void setMonsterZukan(){
@@ -111,5 +92,4 @@ public class Main {
 	pz.setMonsterZukan(tempMonster);
 	pz.setMonsterRare(tempMonsterRare);
     }
-
 }
