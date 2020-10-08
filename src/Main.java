@@ -2,7 +2,7 @@
 ~MonsterZooプログラムの修正ファイル~
 Main.javaを親としてプログラムは、動きます。
 モンスターの追加やプレイヤーの初期情報などの設定は、
-MonsterZoo.javaでも記載していますが、各該当クラスファイルにて設定が可能です。
+MonsterZoo.javaでも記載していますが、各該当クラスファイルにて設定が可能です
 
 修正前の9ルール適応時の状態(--rough)
 line: 49, setter method found.
