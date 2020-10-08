@@ -12,10 +12,22 @@ import java.util.ArrayList;
 public class UserMonster{
     //ユーザがGetしたモンスター一覧
     ArrayList<String> userMonster = new ArrayList<>();
-    public UserMonster userMonster_init(){
-	UserMonster usermonster = new UserMonster();
+
+    public UserMonster(){
+	this.userMonster_init();
+    }
+    public void userMonster_init(){
 	IntStream.range(0,100)
-	    .forEach(value -> usermonster.userMonster.add(""));	
-	return usermonster;
+	    .forEach(value -> this.userMonster.add(""));	
+    }
+
+    public Integer userMonstersizesize(){
+	return this.userMonster.size();
+    }
+    public String userMonsternumnum(Integer j){
+	return this.userMonster.get(j);
+    }
+    public void userMonstersetset(Integer j,String name){
+	this.userMonster.set(j,name);
     }
 }
